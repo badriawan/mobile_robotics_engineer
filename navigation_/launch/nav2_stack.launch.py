@@ -10,7 +10,7 @@ from launch_ros.actions import Node
 def generate_launch_description():
     mapping_pkg_dir = os.path.join(get_package_share_directory('mapping'))
     navigation_pkg_dir=get_package_share_directory('navigation_')
-    map_file = os.path.join(mapping_pkg_dir,'map','big_room.yaml')
+    map_file = os.path.join(mapping_pkg_dir,'map','maze_2d.yaml')
     params_file = os.path.join(navigation_pkg_dir,'config','nav2_params.yaml')
     rviz_config_file = os.path.join(navigation_pkg_dir,'config','nav2.rviz')
 
@@ -38,7 +38,7 @@ def generate_launch_description():
 
     ld = LaunchDescription()
 
-    # ld.add_action(env_bringup)
+    ld.add_action(env_bringup)
     ld.add_action(navigation)
     ld.add_action(rviz)
 
